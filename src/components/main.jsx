@@ -41,7 +41,7 @@ const MainContent = ({ isDarkMode, isTransitioning }) => {
             const currentPosition = window.scrollY;
             const isScrollUp = currentPosition < lastScrollPosition;
             setIsScrollingUp(isScrollUp);
-            setLastScrollPosition(currentPosition);
+            setLastScrollPosition(currentPosition); 
 
             // If we're in the tech animation phase, prevent natural scrolling
             if (isAnimatingTech && !allTechDisplayed && !isScrollUp) {

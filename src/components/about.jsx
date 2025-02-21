@@ -163,7 +163,7 @@ const About = ({ isDarkMode, isTransitioning }) => {
                             {exp.technologies && (
                                 <div className="mt-2">
                                     <p className="font-medium">Technologies used:</p>
-                                    <p className={`text-sm ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>
+                                    <p className={` ml-6 text-sm ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>
                                         {exp.technologies}
                                     </p>
                                 </div>
@@ -171,7 +171,7 @@ const About = ({ isDarkMode, isTransitioning }) => {
                             {exp.skills && (
                                 <div className="mt-2">
                                     <p className="font-medium">Skills:</p>
-                                    <p className={`text-sm ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>
+                                    <p className={`ml-6 text-sm ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>
                                         {exp.skills}
                                     </p>
                                 </div>
@@ -179,7 +179,7 @@ const About = ({ isDarkMode, isTransitioning }) => {
                             {exp.projects && (
                                 <div className="mt-2">
                                     <p className="font-medium">Projects:</p>
-                                    <ul className="list-disc list-inside">
+                                    <ul className="list-disc list-inside ml-6">
                                         {exp.projects.map((project, idx) => (
                                             <li key={idx} className={`text-sm ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>
                                                 {project}
