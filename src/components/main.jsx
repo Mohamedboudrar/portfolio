@@ -7,6 +7,7 @@ import GitProfile from "../assets/gitprof.png"
 import Lightprof from "../assets/lightprof.png"
 import BookCallModal from './BookCallModal';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Link } from "react-router-dom";
 
 // Import all tech images
 import reactLogo from '../assets/techs/React.png';
@@ -210,7 +211,8 @@ const MainContent = ({ isDarkMode, isTransitioning }) => {
                         <span>Book a Call</span>
                     </button>
 
-                    <button
+                    <Link
+                        to="/contact"
                         className={`flex items-center gap-2 px-6 py-3 rounded-lg transition duration-200
                             ${isDarkMode 
                                 ? 'bg-[#2f2f2f] hover:bg-[#3a3a3a] text-white' 
@@ -218,11 +220,10 @@ const MainContent = ({ isDarkMode, isTransitioning }) => {
                             }`}
                         onMouseEnter={() => setHover(true)}
                         onMouseLeave={() => setHover(false)}
-                        onClick={() => window.location.href = "/contact"}
                     >
                         {hover ? <HiOutlineMailOpen className="text-lg" /> : <HiOutlineMail className="text-lg" />}
                         <span>Get in Touch</span>
-                    </button>
+                    </Link>
                 </div>
             </div>
 
