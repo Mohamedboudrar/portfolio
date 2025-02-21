@@ -1,6 +1,10 @@
-import React from 'react';
+import {React, useState} from 'react';
 import { FaCode, FaMobile, FaPaintBrush, FaTools } from 'react-icons/fa';
 import { motion } from 'framer-motion';
+import { Link } from "react-router-dom";
+import { HiOutlineMail } from "react-icons/hi";
+import { HiOutlineMailOpen } from "react-icons/hi";
+import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaGithub, FaLinkedin, FaInstagram } from 'react-icons/fa';
 
 const Services = ({ isDarkMode, isTransitioning }) => {
     const services = [
@@ -76,6 +80,7 @@ const Services = ({ isDarkMode, isTransitioning }) => {
             }
         }
     };
+    const [hover, setHover] = useState(false);
 
     return (
         <div className={`flex-1 ml-6 p-10 overflow-y-auto overflow-x-hidden scrollbar-hide
@@ -150,6 +155,53 @@ const Services = ({ isDarkMode, isTransitioning }) => {
                             </ul>
                         </motion.div>
                     ))}
+                    <Link
+                        to="/contact"
+                        className={`flex items-center mx-auto gap-2 px-6 py-3 rounded-lg transition duration-200
+                            ${isDarkMode 
+                                ? 'bg-[#2f2f2f] hover:bg-[#3a3a3a] text-white' 
+                                : 'bg-gray-200 hover:bg-gray-300 text-gray-900'
+                            }`}
+                        onMouseEnter={() => setHover(true)}
+                        onMouseLeave={() => setHover(false)}
+                    >
+                        {hover ? <HiOutlineMailOpen className="text-lg" /> : <HiOutlineMail className="text-lg" />}
+                        <span>Get in Touch</span>
+                    </Link>
+                    <div className="text-center">
+                    <p className={`mb-4 ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>
+                        Or connect with me on social media
+                    </p>
+                    <div className="flex justify-center space-x-6">
+                        <a
+                            href="https://github.com/Mohamedboudrar"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={`text-2xl transition-colors duration-200
+                                ${isDarkMode ? 'text-gray-400 hover:text-white' : 'text-gray-600 hover:text-gray-900'}`}
+                        >
+                            <FaGithub />
+                        </a>
+                        <a
+                            href="https://www.linkedin.com/in/mohamed-boudrar-667383223"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={`text-2xl transition-colors duration-200
+                                ${isDarkMode ? 'text-gray-400 hover:text-white' : 'text-gray-600 hover:text-gray-900'}`}
+                        >
+                            <FaLinkedin />
+                        </a>
+                        <a
+                            href="https://www.instagram.com/mohamed._.boudrar"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={`text-2xl transition-colors duration-200
+                                ${isDarkMode ? 'text-gray-400 hover:text-white' : 'text-gray-600 hover:text-gray-900'}`}
+                        >
+                            <FaInstagram />
+                        </a>
+                    </div>
+                </div>
                 </motion.div>
             </div>
         </div>
